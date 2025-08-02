@@ -15,7 +15,7 @@ const authRoutes = require('./routes/auth'); // we’ll add this later
 
 // 💡 Mount routes
 app.use('/tickets', ticketRoutes);
-app.use('/auth', authRoutes); // optional for now
+app.use('/auth', require('./routes/auth')); // optional for now
 
 // Basic test route
 app.get('/', (req, res) => {
