@@ -1,3 +1,44 @@
+// const express = require('express');
+// const mongoose = require('mongoose');
+// const cors = require('cors');
+// require('dotenv').config();
+
+// const app = express();
+
+// // Middleware
+// app.use(cors());
+// app.use(express.json());
+
+// // 🚀 Import routes
+// const ticketRoutes = require('./routes/tickets');
+// const authRoutes = require('./routes/auth'); // we’ll add this later
+
+// // 💡 Mount routes
+// app.use('/tickets', ticketRoutes);
+// app.use('/auth', require('./routes/auth')); // optional for now
+
+// // Basic test route
+// app.get('/', (req, res) => {
+//   res.send('QuickDesk API is working ✅');
+// });
+
+// // Connect to MongoDB
+// mongoose.connect(process.env.MONGO_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// })
+// .then(() => console.log('✅ MongoDB connected'))
+// .catch((err) => console.error('❌ MongoDB connection failed:', err));
+
+// // Start the server
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server running on port ${PORT}`);
+// });
+
+
+
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -11,11 +52,11 @@ app.use(express.json());
 
 // 🚀 Import routes
 const ticketRoutes = require('./routes/tickets');
-const authRoutes = require('./routes/auth'); // we’ll add this later
+const authRoutes = require('./routes/auth');
 
 // 💡 Mount routes
 app.use('/tickets', ticketRoutes);
-app.use('/auth', require('./routes/auth')); // optional for now
+app.use('/auth', authRoutes);
 
 // Basic test route
 app.get('/', (req, res) => {
@@ -23,12 +64,9 @@ app.get('/', (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('✅ MongoDB connected'))
-.catch((err) => console.error('❌ MongoDB connection failed:', err));
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('✅ MongoDB connected'))
+  .catch((err) => console.error('❌ MongoDB connection failed:', err));
 
 // Start the server
 const PORT = process.env.PORT || 5000;
