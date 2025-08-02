@@ -1,0 +1,129 @@
+/* -------- GLOBAL STYLES -------- */
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #ee9ca7, #ffdde1, #a1c4fd, #c2e9fb, #d4fc79, #96e6a1);
+    background-size: 500% 500%;
+    animation: gradientBG 12s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* -------- GLASSMORPHIC CARD -------- */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+}
+
+/* -------- FORM ELEMENTS -------- */
+input, select, textarea {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* -------- BUTTON STYLING -------- */
+.btn-primary, .btn-success {
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 12px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    box-shadow: 0 8px 20px rgba(37, 117, 252, 0.4);
+}
+
+/* -------- TEXT STYLES -------- */
+h4, h3, h5 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+p, a {
+    color: #f1f1f1;
+}
+/* Center but slightly elevated for aesthetic */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 80px; /* Push card a bit lower for aesthetic balance */
+    width: 100%;
+}
+
+/* Card width for better look */
+.card {
+    max-width: 400px;
+    width: 100%;
+}
+/* Responsive Design */ 
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+        width: 90%;
+    }
+    body {
+        padding: 10px;
+    }
+}
+/* Navbar Glass Effect */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 999;
+}
+
+/* Stylish Gradient Text */
+.brand {
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #6a11cb, #2575fc, #ff6f91);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
